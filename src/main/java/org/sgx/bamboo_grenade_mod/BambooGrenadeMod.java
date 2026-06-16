@@ -1,13 +1,13 @@
-package org.sgx.bamboo_grenade;
+package org.sgx.bamboo_grenade_mod;
 
 import net.fabricmc.api.ModInitializer;
 
-import org.sgx.bamboo_grenade.item.ModItems;
+import org.sgx.bamboo_grenade_mod.item.ModItems;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class BambooGrenade implements ModInitializer {
-	public static final String MOD_ID = "bamboo_grenade";
+public class BambooGrenadeMod implements ModInitializer {
+	public static final String MOD_ID = "bamboo_grenade_mod";
 
 	// This logger is used to write text to the console and the log file.
 	// It is considered best practice to use your mod id as the logger's name.

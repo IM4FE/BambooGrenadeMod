@@ -1,4 +1,4 @@
-package org.sgx.bamboo_grenade.client.mixin;
+package org.sgx.bamboo_grenade_mod.client.mixin;
 
 import net.minecraft.client.Minecraft;
 import org.spongepowered.asm.mixin.Mixin;
@@ -7,7 +7,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(Minecraft.class)
-public class BambooGrenadeClientMixin {
+public class BambooGrenadeModClientMixin {
 	@Inject(at = @At("HEAD"), method = "run")
 	private void init(CallbackInfo info) {
 		// This code is injected into the start of Minecraft.run()V

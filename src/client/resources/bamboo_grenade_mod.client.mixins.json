@@ -1,9 +1,9 @@
 {
 	"required": true,
-	"package": "org.sgx.bamboo_grenade.client.mixin",
+	"package": "org.sgx.bamboo_grenade_mod.client.mixin",
 	"compatibilityLevel": "JAVA_25",
 	"client": [
-		"BambooGrenadeClientMixin"
+		"BambooGrenadeModClientMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
