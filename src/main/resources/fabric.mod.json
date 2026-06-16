@@ -1,0 +1,38 @@
+{
+	"schemaVersion": 1,
+	"id": "bamboo_grenade",
+	"version": "${version}",
+	"name": "Bamboo Grenade",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"Me!"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/bamboo_grenade/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"org.sgx.bamboo_grenade.BambooGrenade"
+		],
+		"client": [
+			"org.sgx.bamboo_grenade.client.BambooGrenadeClient"
+		]
+	},
+	"mixins": [
+		"bamboo_grenade.mixins.json",
+		{
+			"config": "bamboo_grenade.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.19.3",
+		"minecraft": "~26.1.2",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}

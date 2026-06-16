@@ -1,0 +1,14 @@
+{
+	"required": true,
+	"package": "org.sgx.bamboo_grenade.mixin",
+	"compatibilityLevel": "JAVA_25",
+	"mixins": [
+		"BambooGrenadeMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	},
+	"overwrites": {
+		"requireAnnotations": true
+	}
+}
