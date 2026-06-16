@@ -2,7 +2,8 @@ package org.sgx.bamboo_grenade_mod;
 
 import net.fabricmc.api.ModInitializer;
 
-import org.sgx.bamboo_grenade_mod.item.ModItems;
+import org.sgx.bamboo_grenade_mod.init.ModEntities;
+import org.sgx.bamboo_grenade_mod.init.ModItems;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -20,6 +21,7 @@ public class BambooGrenadeMod implements ModInitializer {
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
 		ModItems.register();
+		ModEntities.register();
 		LOGGER.info("Hello Fabric world!");
 	}
 }

@@ -1,4 +1,4 @@
-package org.sgx.bamboo_grenade_mod.item;
+package org.sgx.bamboo_grenade_mod.init;
 
 import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
 import net.minecraft.core.Registry;
@@ -9,12 +9,13 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 import org.sgx.bamboo_grenade_mod.BambooGrenadeMod;
+import org.sgx.bamboo_grenade_mod.item.BambooGrenadeItem;
 
 import java.util.function.Function;
 
 public class ModItems {
 
-    public static final Item BAMBOO_GRENADE = registerItem("bamboo_grenade", Item::new);
+    public static final Item BAMBOO_GRENADE = registerItem("bamboo_grenade", BambooGrenadeItem::new);
 
     private static Item registerItem(String name, Function<Item.Properties, Item> function) {
         return Registry.register(BuiltInRegistries.ITEM, Identifier.fromNamespaceAndPath(BambooGrenadeMod.MOD_ID, name),
@@ -22,7 +23,7 @@ public class ModItems {
     }
 
     public static void register(){
-        BambooGrenadeMod.LOGGER.debug("Registering items for:" + BambooGrenadeMod.MOD_ID);
+        BambooGrenadeMod.LOGGER.debug("Registering items for " + BambooGrenadeMod.MOD_ID);
         CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.COMBAT).register(output -> output.accept(BAMBOO_GRENADE));
     }
 }
