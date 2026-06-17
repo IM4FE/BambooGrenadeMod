@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " R ",
+    "RWR",
+    " R "
+  ],
+  "key": {
+    "W": "minecraft:gunpowder",
+    "R": "minecraft:bamboo"
+  },
+  "result": {
+    "id": "bamboo_grenade_mod:bamboo_grenade",
+    "count": 1
+  }
+}

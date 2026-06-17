@@ -19,8 +19,6 @@ import net.minecraft.world.phys.HitResult;
 import org.sgx.bamboo_grenade_mod.init.ModEntities;
 import org.sgx.bamboo_grenade_mod.init.ModItems;
 
-import java.util.Vector;
-
 public class BambooGrenadeEntity extends ThrowableItemProjectile {
     public BambooGrenadeEntity(EntityType<? extends ThrowableItemProjectile> entityType, Level level) {
         super(entityType, level);
@@ -44,7 +42,7 @@ public class BambooGrenadeEntity extends ThrowableItemProjectile {
                 targetPos = targetPos.atY(this.level().getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, targetPos.getX(), targetPos.getZ()));
 
                 BlockState saplingState = Blocks.BAMBOO_SAPLING.defaultBlockState();
-                if (saplingState.canSurvive(this.level(), targetPos)) {
+                if (saplingState.canSurvive(this.level(), targetPos) && Math.abs(targetPos.getY()-this.blockPosition().getY())<=4) {
                     this.level().setBlockAndUpdate(targetPos, saplingState);
                     serverLevel.sendParticles(
                             ParticleTypes.HAPPY_VILLAGER,
@@ -56,8 +54,19 @@ public class BambooGrenadeEntity extends ThrowableItemProjectile {
                             0.3,  // spread Y
                             0.3,  // spread Z
                             0.0   // speed
-                    );
+                    );//particle "Green things"
                 }
+                serverLevel.sendParticles(
+                        ParticleTypes.EXPLOSION,
+                        targetPos.getX() + 0.5,
+                        targetPos.getY() + 1.0,
+                        targetPos.getZ() + 0.5,
+                        1,    // count
+                        0.3,  // spread X
+                        0.3,  // spread Y
+                        0.3,  // spread Z
+                        0.0   // speed
+                );//particle "BOOM"
             }
             BlockPos currentBlockPos = this.blockPosition();
 
