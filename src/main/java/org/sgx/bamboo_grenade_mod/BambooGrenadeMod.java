@@ -2,6 +2,9 @@ package org.sgx.bamboo_grenade_mod;
 
 import net.fabricmc.api.ModInitializer;
 
+import net.minecraft.core.Registry;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.Identifier;
 import org.sgx.bamboo_grenade_mod.init.ModEntities;
 import org.sgx.bamboo_grenade_mod.init.ModItems;
 import org.slf4j.Logger;
